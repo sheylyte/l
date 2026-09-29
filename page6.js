@@ -2605,9 +2605,26 @@ if (payload.eventType === "INSERT") {
 }
 
 
+                
+
                 /* MEMBER LEFT */
 
-                if (payload.eventType === "DELETE") {
+if (payload.eventType === "DELETE") {
+
+    if (payload.old) {
+
+        console.log(
+            "LARCK MEMBER LEFT:",
+            payload.old.user_id,
+            "seat:",
+            payload.old.seat_number
+        );
+
+        removeRealtimeMember(
+            payload.old
+        );
+    }
+
     await syncReleasedRoomSeats();
 }
 
