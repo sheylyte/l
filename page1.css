@@ -1,0 +1,1701 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    min-height: 100%;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #08c9c5;
+    color: white;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+.background-video{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -2;
+}
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(8, 201, 197, 0.35);
+
+    z-index: -1;
+}
+.login-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 30px 40px;
+}
+.logo-section{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+}
+.logo{
+    width: 250px;
+    max-width: 80%;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 25px;
+}
+.logo-section h2{
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+.login-options {
+    width: 100%;
+    max-width: 590px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+.login-btn {
+    width: 100%;
+    height: 75px;
+
+    border: 0;
+    border-radius: 50px;
+
+    background-color: white;
+    color: #202020;
+
+    font-size: 21px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+
+    transition: transform 0.2s ease, background-color 0.2s ease; 
+}   
+.login-btn:hover {
+    background-color: #f2f2f2;
+    transform: translateY(-2px);
+}   
+.login-btn:active {
+    transform: scale(0.97);
+}      
+.login-icon {
+    position: absolute;
+
+    left: 35px;
+
+    width: 30px;
+    height: 30px;
+
+    display: block;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+    font-weight: bold;
+}   
+.google-icon {
+    color: #4285F4;
+}     
+.email-btn .login-icon {
+    color: #2997e8;
+}     
+.account-btn .login-icon {
+    color: #16c6bb;
+}
+.retrieve-account {
+
+    margin-top: 95px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 23px;
+
+    font-weight: 700;
+}   
+.retrieve-account:hover {
+
+    text-decoration: underline;
+}      
+.terms {
+
+    margin-top: 45px;
+
+    font-size: 18px;
+
+    text-align: center;
+
+    color: white;
+
+    line-height: 1.5;
+}       
+.terms a {
+
+    color: white;
+
+    text-decoration: underline;
+}       
+@media (max-width: 600px) {
+
+    .login-container {
+
+        padding: 150px 25px 35px;
+    }
+
+
+    .logo-section {
+
+        margin-bottom: 300px;
+    }
+     .logo {
+
+        width: 210px;
+    }
+
+
+    .logo-section h2 {
+
+        font-size: 20px;
+    }
+
+
+    .login-buttons {
+
+        gap: 22px;
+    }
+
+
+    .login-button {
+
+        height: 72px;
+
+        font-size: 19px;
+    }
+
+
+    .google-icon,
+    .mail-icon,
+    .account-icon {
+
+        left: 28px;
+
+        font-size: 28px;
+    }
+
+
+    .retrieve-account {
+
+        margin-top: 70px;
+
+        font-size: 19px;
+    }
+
+
+    .terms {
+
+        margin-top: 35px;
+
+        font-size: 15px; 
+    }  .email-card {
+        padding: 35px 25px;
+    }
+
+    .email-card h2 {
+        font-size: 22px;
+    }
+
+    .email-logo img {
+        width: 160px;
+    }
+}
+.google-popup {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    z-index: 100;
+}           
+.google-card {
+    width: 100%;
+    max-width: 450px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 40px 35px;
+
+    position: relative;
+
+    color: #202124;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+}                      
+.close-google {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 32px;
+
+    color: #555;
+
+    cursor: pointer;
+}               
+.google-logo-text {
+    font-size: 32px;
+
+    font-weight: 600;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+}
+
+.google-blue {
+    color: #4285F4;
+}
+
+.google-red {
+    color: #EA4335;
+}                 
+.google-yellow {
+    color: #FBBC05;
+}
+
+.google-green {
+    color: #34A853;
+}
+ .google-card h2 {
+    text-align: center;
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+.google-description {
+    text-align: center;
+
+    color: #5f6368;
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+}
+
+.google-account {
+    width: 100%;
+
+    border: 1px solid #dadce0;
+
+    border-radius: 12px;
+
+    padding: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.google-account:hover {
+    background: #f8f9fa;
+}
+
+.account-avatar {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #16c6bb;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.account-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    flex: 1;
+}
+
+.account-details strong {
+    font-size: 16px;
+}
+
+.account-details span {
+    font-size: 13px;
+
+    color: #5f6368;
+}
+
+.account-arrow {
+    font-size: 30px;
+
+    color: #777;
+}
+
+
+.use-another-account {
+    width: 100%;
+
+    margin-top: 15px;
+
+    height: 50px;
+
+    border: 1px solid #dadce0;
+
+    border-radius: 25px;
+
+    background: white;
+
+    color: #1a73e8;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.use-another-account:hover {
+    background: #f8fbff;
+}
+
+
+.google-privacy {
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #5f6368;
+}
+
+.google-privacy a {
+    color: #1a73e8;
+
+    text-decoration: none;
+}
+.email-popup {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    z-index: 110;
+}            
+.email-popup {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    z-index: 110;
+}               
+.email-card {
+    width: 100%;
+    max-width: 450px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 40px 35px;
+
+    position: relative;
+
+    color: #202124;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+}           
+.close-email {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 32px;
+
+    color: #555;
+
+    cursor: pointer;
+}
+.email-logo {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.email-logo img {
+    width: 180px;
+
+    height: 45px;
+
+    object-fit: contain;
+}         
+.email-card h2 {
+    text-align: center;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}       
+.email-description {
+    text-align: center;
+
+    color: #5f6368;
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+}       
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #333;
+}        
+.input-group input {
+    width: 100%;
+
+    height: 55px;
+
+    border: 1px solid #d0d0d0;
+
+    border-radius: 12px;
+
+    padding: 0 16px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.input-group input:focus {
+    border-color: #16c6bb;
+
+    box-shadow:  0 0 0 3px rgba(22, 198, 187, 0.12);
+}         
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 75px;
+}       
+.show-password {
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #16a99f;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}        
+.forgot-password {
+    display: block;
+
+    margin-top: 5px;
+
+    margin-bottom: 25px;
+
+    color: #16a99f;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}         
+.email-continue {
+    width: 100%;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 28px;
+
+    background: #16c6bb;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease,
+                background 0.2s ease;
+}             
+.email-continue:hover {
+    background: #12aaa1;
+
+    transform: translateY(-2px);
+}           
+.create-account {
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #666;
+
+    line-height: 1.5;
+}
+
+.create-account a {
+    color: #16a99f;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+.account-popup {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    z-index: 120;
+}
+
+.account-card {
+    width: 100%;
+    max-width: 450px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 40px 35px;
+
+    position: relative;
+
+    color: #202124;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+}
+
+.close-account {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 32px;
+
+    color: #555;
+
+    cursor: pointer;
+}
+
+.account-logo {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.account-logo img {
+    width: 180px;
+
+    height: 45px;
+
+    object-fit: contain;
+}
+
+.account-card h2 {
+    text-align: center;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.account-description {
+    text-align: center;
+
+    color: #5f6368;
+
+    font-size: 15px;
+
+    margin-bottom: 30px;
+}
+
+.account-input-group {
+    margin-bottom: 20px;
+}
+
+.account-input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #333;
+}
+
+.account-input-group input {
+    width: 100%;
+
+    height: 55px;
+
+    border: 1px solid #d0d0d0;
+
+    border-radius: 12px;
+
+    padding: 0 16px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.account-input-group input:focus {
+    border-color: #16c6bb;
+
+    box-shadow: 0 0 0 3px rgba(22, 198, 187, 0.12);
+}
+.account-password-wrapper {
+    position: relative;
+}
+
+.account-password-wrapper input {
+    padding-right: 75px;
+}
+
+.account-show-password {
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #16a99f;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.account-forgot-password {
+    display: block;
+
+    margin-top: 5px;
+
+    margin-bottom: 25px;
+
+    color: #16a99f;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.account-signin {
+    width: 100%;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 28px;
+
+    background: #16c6bb;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease,
+                background 0.2s ease;
+}
+
+.account-signin:hover {
+    background: #12aaa1;
+
+    transform: translateY(-2px);
+}
+
+.account-create {
+    margin-top: 25px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    color: #666;
+
+    line-height: 1.5;
+}
+
+.account-create a {
+    color: #16a99f;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+
+@media (max-width: 600px) {
+
+    .account-card {
+        padding: 35px 25px;
+    }
+
+    .account-card h2 {
+        font-size: 22px;
+    }
+
+    .account-logo img {
+        width: 160px;
+    }
+
+}
+/* =========================
+   RETRIEVE ACCOUNT POPUP
+========================= */
+
+.retrieve-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    z-index: 130;
+}
+
+
+/* RETRIEVE CARD */
+
+.retrieve-card {
+    width: 100%;
+    max-width: 450px;
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 40px 35px;
+
+    position: relative;
+
+    color: #202124;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.35);
+}
+
+
+/* CLOSE BUTTON */
+
+.close-retrieve {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 32px;
+
+    color: #555;
+
+    cursor: pointer;
+}
+
+
+/* LOGO */
+
+.retrieve-logo {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.retrieve-logo img {
+    width: 180px;
+    height: 45px;
+
+    object-fit: contain;
+}
+
+
+/* TITLE */
+
+.retrieve-card h2 {
+    text-align: center;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+
+    color: #202124;
+}
+
+
+/* DESCRIPTION */
+
+.retrieve-description {
+    text-align: center;
+
+    color: #5f6368;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+}
+
+
+/* INPUT GROUP */
+
+.retrieve-input-group {
+    margin-bottom: 25px;
+}
+
+
+/* LABEL */
+
+.retrieve-input-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #333;
+}
+
+
+/* INPUT */
+
+.retrieve-input-group input {
+    width: 100%;
+
+    height: 55px;
+
+    border: 1px solid #d0d0d0;
+
+    border-radius: 12px;
+
+    padding: 0 16px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* INPUT FOCUS */
+
+.retrieve-input-group input:focus {
+    border-color: #16c6bb;
+
+    box-shadow:
+        0 0 0 3px rgba(22, 198, 187, 0.12);
+}
+
+
+/* SEND CODE BUTTON */
+
+.send-code-btn {
+    width: 100%;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 28px;
+
+    background: #16c6bb;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* SEND CODE HOVER */
+
+.send-code-btn:hover {
+    background: #12aaa1;
+
+    transform: translateY(-2px);
+}
+
+
+/* SEND CODE CLICK */
+
+.send-code-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* BACK TO SIGN IN */
+
+.back-to-signin {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #16a99f;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* MESSAGE */
+
+.retrieve-message {
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #16a99f;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .retrieve-card {
+        padding: 35px 25px;
+    }
+
+    .retrieve-card h2 {
+        font-size: 22px;
+    }
+
+    .retrieve-logo img {
+        width: 160px;
+    }
+
+    .retrieve-description {
+        font-size: 14px;
+    }
+
+    .retrieve-input-group input {
+        height: 52px;
+        font-size: 15px;
+    }
+
+    .send-code-btn {
+        height: 52px;
+        font-size: 16px;
+    }
+}
+/* =========================
+   USER SERVICE TERMS
+========================= */
+
+.terms-popup {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    z-index: 140;
+}
+
+
+/* TERMS CARD */
+
+.terms-card {
+    width: 100%;
+    max-width: 600px;
+
+    max-height: 85vh;
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    position: relative;
+
+    color: #202124;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.35);
+
+    overflow-y: auto;
+}
+
+
+/* CLOSE BUTTON */
+
+.close-terms {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 32px;
+
+    color: #555;
+
+    cursor: pointer;
+}
+
+
+/* LOGO */
+
+.terms-logo {
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+.terms-logo img {
+    width: 170px;
+    height: 45px;
+
+    object-fit: contain;
+}
+
+
+/* TITLE */
+
+.terms-card h2 {
+    text-align: center;
+
+    font-size: 26px;
+
+    margin-bottom: 15px;
+
+    color: #202124;
+}
+
+
+/* INTRODUCTION */
+
+.terms-intro {
+    text-align: center;
+
+    color: #5f6368;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+
+/* TERMS CONTENT */
+
+.terms-content h3 {
+    font-size: 17px;
+
+    margin-top: 25px;
+
+    margin-bottom: 8px;
+
+    color: #202124;
+}
+
+.terms-content p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #5f6368;
+
+    margin-bottom: 10px;
+}
+
+
+/* ACCEPT BUTTON */
+
+.terms-accept {
+    width: 100%;
+
+    height: 55px;
+
+    margin-top: 30px;
+
+    border: none;
+
+    border-radius: 28px;
+
+    background: #16c6bb;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.terms-accept:hover {
+    background: #12aaa1;
+
+    transform: translateY(-2px);
+}
+
+
+.terms-accept:active {
+    transform: scale(0.97);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .terms-card {
+        max-height: 88vh;
+
+        padding: 30px 23px;
+    }
+
+
+    .terms-card h2 {
+        font-size: 22px;
+    }
+
+
+    .terms-intro {
+        font-size: 14px;
+    }
+
+
+    .terms-content h3 {
+        font-size: 16px;
+    }
+
+
+    .terms-content p {
+        font-size: 13px;
+    }
+
+
+    .terms-logo img {
+        width: 155px;
+    }
+
+}
+
+
+/* =========================================================
+   CREATE ACCOUNT POPUP
+========================================================= */
+
+.signup-popup {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    z-index: 99999;
+}
+
+
+/* SIGNUP CARD */
+
+.signup-card {
+    position: relative;
+
+    width: 100%;
+    max-width: 390px;
+
+    padding: 30px 24px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    animation: signupAppear 0.25s ease;
+}
+
+
+@keyframes signupAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* CLOSE BUTTON */
+
+.close-signup {
+    position: absolute;
+
+    top: 12px;
+    right: 14px;
+
+    width: 34px;
+    height: 34px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f0f0f0;
+
+    color: #333;
+
+    font-size: 24px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* LOGO */
+
+.signup-logo {
+    width: 70px;
+    height: 70px;
+
+    margin: 5px auto 15px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.signup-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* TITLE */
+
+.signup-card h2 {
+    margin: 0 0 8px;
+
+    font-size: 24px;
+
+    color: #17213b;
+}
+
+
+.signup-description {
+    margin: 0 0 22px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #777;
+}
+
+
+/* INPUT GROUP */
+
+.signup-input-group {
+    margin-bottom: 16px;
+
+    text-align: left;
+}
+
+
+.signup-input-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #17213b;
+}
+
+
+.signup-input-group input {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 15px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #ddd;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    color: #17213b;
+
+    background: #f8f8f8;
+}
+
+
+.signup-input-group input:focus {
+    border-color: #6c4cff;
+
+    background: #fff;
+
+    box-shadow:
+        0 0 0 3px rgba(108, 76, 255, 0.10);
+}
+
+
+/* CREATE ACCOUNT BUTTON */
+
+.signup-continue {
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #6c4cff,
+        #8f5cff
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.signup-continue:active {
+    transform: scale(0.98);
+}
+
+
+/* MESSAGE */
+
+.signup-message {
+    min-height: 20px;
+
+    margin: 14px 0 0;
+
+    font-size: 13px;
+
+    color: #6c4cff;
+}
+
+
+/* PHONE */
+
+@media (max-width: 420px) {
+
+    .signup-popup {
+        padding: 15px;
+    }
+
+    .signup-card {
+        padding: 27px 20px;
+        border-radius: 20px;
+    }
+
+    .signup-card h2 {
+        font-size: 21px;
+    }
+
+    .signup-input-group input {
+        height: 48px;
+    }
+
+}
+/* =========================
+   COUNTRY SELECTOR
+========================= */
+
+#signupCountry {
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.10);
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    appearance: auto;
+}
+
+#signupCountry:focus {
+    border-color: #00d9c0;
+    box-shadow: 0 0 0 3px rgba(0, 217, 192, 0.15);
+}
+
+#signupCountry option {
+    background: #17213b;
+    color: white;
+    padding: 10px;
+}
+
+/* Placeholder text */
+#signupCountry:invalid {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+
+    #signupCountry {
+        height: 50px;
+        font-size: 14px;
+        padding: 0 14px;
+    }
+
+}

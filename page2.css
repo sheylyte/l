@@ -1,0 +1,1410 @@
+/* =========================================
+   LARCK HOME
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6f8;
+    color: #17191d;
+    min-height: 100vh;
+    padding-bottom: 82px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.home-header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(255, 255, 255, 0.20),
+            transparent 28%
+        ),
+        linear-gradient(
+            145deg,
+            #08c9c5,
+            #08c9c5 50%,
+            #08c9c5
+        );
+
+    color: white;
+    padding: 18px 18px 14px;
+
+    box-shadow: 0 4px 20px rgba(90, 30, 150, 0.20);
+}
+
+
+/* =========================================
+   TOP NAVIGATION
+========================================= */
+
+.top-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.home-tabs {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.top-tab {
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: 21px;
+    font-weight: 500;
+
+    padding: 7px 0 13px;
+
+    position: relative;
+    cursor: pointer;
+}
+
+.top-tab.active {
+    color: white;
+    font-weight: 700;
+}
+
+.top-tab.active::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: 1px;
+
+    width: 24px;
+    height: 4px;
+
+    transform: translateX(-50%);
+
+    background: white;
+
+    border-radius: 10px;
+}
+
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-button {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    position: relative;
+}
+
+
+/* SEARCH ICON */
+
+.search-icon {
+    width: 24px;
+    height: 24px;
+
+    border: 3px solid currentColor;
+
+    border-radius: 50%;
+
+    display: block;
+
+    position: relative;
+}
+
+.search-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+    height: 3px;
+
+    background: currentColor;
+
+    right: -7px;
+    bottom: -4px;
+
+    transform: rotate(48deg);
+
+    border-radius: 5px;
+}
+
+
+/* NOTIFICATION */
+
+.notification-icon {
+    font-size: 22px;
+}
+
+.notification-dot {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    background: #ff426f;
+
+    border-radius: 50%;
+
+    top: 7px;
+    right: 6px;
+
+    border: 2px solid #8d2edb;
+}
+
+
+/* =========================================
+   COUNTRY AREA
+========================================= */
+
+.country-area {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 13px;
+
+    min-width: 0;
+}
+
+.country-all {
+    flex-shrink: 0;
+
+    border: none;
+
+    background: #ff2e78;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+}
+
+.country-scroll {
+    display: flex;
+    gap: 9px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+.country-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.country-button {
+    flex-shrink: 0;
+
+    border: none;
+
+    background: rgba(255, 255, 255, 0.30);
+
+    color: #181818;
+
+    padding: 9px 14px;
+
+    border-radius: 25px;
+
+    font-size: 16px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+.country-more {
+    flex-shrink: 0;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #171717;
+
+    font-size: 29px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.home-content {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 22px 18px 30px;
+}
+
+
+/* =========================================
+   FEATURE CARDS
+========================================= */
+
+.feature-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 28px;
+}
+
+.feature-card {
+    height: 112px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    padding: 18px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+}
+
+.activity-card {
+    background:
+        radial-gradient(
+            circle at 75% 30%,
+            rgba(255,255,255,.55),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #ff4ca4,
+            #e73b91
+        );
+}
+
+.games-card {
+    background:
+        radial-gradient(
+            circle at 78% 35%,
+            rgba(255,255,255,.55),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #39b5ff,
+            #1989e9
+        );
+}
+
+.feature-text {
+    color: white;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    z-index: 2;
+}
+
+.feature-illustration {
+    position: absolute;
+
+    right: 8px;
+
+    font-size: 34px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 4px;
+
+    transform: rotate(-5deg);
+}
+
+.activity-art {
+    right: 8px;
+}
+
+.games-art {
+    right: 12px;
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.home-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 13px;
+}
+
+.section-title h2 {
+    font-size: 20px;
+}
+
+.see-all-button {
+    border: none;
+
+    background: transparent;
+
+    color: #a02ee3;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   PARTY GRID
+========================================= */
+
+.party-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.home-party-card {
+    background: white;
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 16px rgba(30, 30, 40, 0.07);
+
+    transition: transform 0.2s ease;
+}
+
+.home-party-card:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   PARTY COVER
+========================================= */
+
+.party-cover {
+    height: 145px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.cover-one {
+    background:
+        radial-gradient(
+            circle at 25% 20%,
+            #60e4ff,
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #102a65,
+            #168bb2
+        );
+}
+
+.cover-two {
+    background:
+        radial-gradient(
+            circle at 75% 25%,
+            #ffbc75,
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #30205e,
+            #bc3c8d
+        );
+}
+
+.cover-three {
+    background:
+        radial-gradient(
+            circle at 25% 30%,
+            #8dffcf,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #154f42,
+            #20a078
+        );
+}
+
+.cover-four {
+    background:
+        radial-gradient(
+            circle at 75% 30%,
+            #ffd36b,
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #5c263a,
+            #e16d61
+        );
+}
+
+.party-badge {
+    position: absolute;
+
+    left: 10px;
+    top: 10px;
+
+    padding: 6px 9px;
+
+    background: rgba(0, 0, 0, 0.40);
+
+    color: white;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.room-host-avatar {
+    width: 68px;
+    height: 68px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    color: #9a32d8;
+
+    border: 3px solid rgba(255,255,255,.65);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.room-viewers {
+    position: absolute;
+
+    right: 10px;
+    bottom: 10px;
+
+    padding: 6px 9px;
+
+    border-radius: 10px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    color: white;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   PARTY INFORMATION
+========================================= */
+
+.party-card-content {
+    padding: 14px;
+}
+
+.party-card-content h3 {
+    font-size: 15px;
+
+    margin-bottom: 7px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.party-description {
+    color: #8b9298;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    margin-bottom: 11px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.party-bottom {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 7px;
+}
+
+.party-category {
+    font-size: 11px;
+
+    padding: 6px 9px;
+
+    border-radius: 15px;
+
+    white-space: nowrap;
+}
+
+.friends {
+    background: #ffe4f5;
+    color: #e637b1;
+}
+
+.music {
+    background: #e0f1ff;
+    color: #228ee5;
+}
+
+.chatting {
+    background: #ffe6e6;
+    color: #ef6262;
+}
+
+.join-room {
+    border: none;
+
+    background: #ff2e78;
+
+    color: white;
+
+    padding: 7px 13px;
+
+    border-radius: 17px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   PROMOTIONAL BANNER
+========================================= */
+
+.promo-section {
+    margin-bottom: 30px;
+}
+
+.promo-banner {
+    width: 100%;
+
+    min-height: 150px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 22px;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(255, 255, 255, .25),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #4b1890,
+            #a63fe8
+        );
+}
+
+.promo-content {
+    position: relative;
+    z-index: 2;
+}
+
+.promo-small {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+
+    opacity: .85;
+}
+
+.promo-content h2 {
+    font-size: 25px;
+
+    line-height: 1.1;
+
+    margin: 7px 0;
+}
+
+.promo-content p {
+    max-width: 330px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    opacity: .88;
+}
+
+.promo-symbol {
+    position: absolute;
+
+    right: 40px;
+
+    font-size: 90px;
+
+    opacity: .9;
+
+    transform: rotate(-8deg);
+}
+
+
+/* =========================================
+   COMPACT PARTY LIST
+========================================= */
+
+.compact-party-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.compact-party {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 12px 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-shadow:
+        0 3px 12px rgba(30,30,40,.05);
+
+    cursor: pointer;
+}
+
+.compact-avatar {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e9d9ff;
+
+    color: #8b30d4;
+
+    font-weight: 800;
+}
+
+.avatar-two {
+    background: #d8efff;
+    color: #168bd0;
+}
+
+.avatar-three {
+    background: #ffe1ee;
+    color: #e43a83;
+}
+
+.compact-info {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.compact-info h3 {
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+.compact-info p {
+    color: #92989e;
+
+    font-size: 11px;
+}
+
+.compact-viewers {
+    color: #e33587;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   CREATE PARTY BUTTON
+========================================= */
+
+.create-party-button {
+    position: fixed;
+
+    right: 22px;
+    bottom: 98px;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2180,
+            #ff4aa0
+        );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 8px 25px rgba(245, 34, 125, .35);
+
+    cursor: pointer;
+
+    z-index: 90;
+
+    transition: transform .2s ease;
+}
+
+.create-party-button:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   FANCY BOTTOM NAVIGATION
+========================================= */
+
+.bottom-navigation {
+    position: fixed;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 82px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #08c9c5,
+            #08c9c5
+        );
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    z-index: 100;
+
+    box-shadow:
+        0 -6px 25px rgba(70, 20, 120, 0.20);
+
+    padding-bottom: 4px;
+}
+
+
+/* =========================================
+   NAV ITEM
+========================================= */
+
+.bottom-nav-item {
+    border: none;
+
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    position: relative;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================
+   SVG ICON
+========================================= */
+
+.bottom-icon {
+    width: 29px;
+    height: 29px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.bottom-icon svg {
+    width: 26px;
+    height: 26px;
+
+    fill: none;
+
+    stroke: currentColor;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    transition:
+        width 0.25s ease,
+        height 0.25s ease,
+        stroke-width 0.25s ease;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.bottom-label {
+    line-height: 1;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================
+   ACTIVE ITEM
+========================================= */
+
+.bottom-nav-item.active {
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+
+/* ACTIVE ICON */
+
+.bottom-nav-item.active .bottom-icon {
+    transform: scale(1.12);
+
+    filter:
+        drop-shadow(
+            0 3px 7px rgba(255, 255, 255, 0.30)
+        );
+}
+
+.bottom-nav-item.active .bottom-icon svg {
+    width: 29px;
+    height: 29px;
+
+    stroke-width: 2.2;
+}
+
+
+/* ACTIVE LABEL */
+
+.bottom-nav-item.active .bottom-label {
+    color: #ffe936;
+
+    font-weight: 700;
+
+    transform: translateY(1px);
+}
+
+
+/* =========================================
+   ACTIVE INDICATOR
+========================================= */
+
+.bottom-nav-item.active::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    width: 34px;
+    height: 3px;
+
+    background: #ffe936;
+
+    border-radius: 0 0 8px 8px;
+
+    box-shadow:
+        0 2px 8px rgba(255, 233, 54, 0.45);
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.bottom-nav-item:hover {
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+.bottom-nav-item:hover .bottom-icon {
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .bottom-navigation {
+        height: 78px;
+    }
+
+    .bottom-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .bottom-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .bottom-nav-item.active .bottom-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .bottom-label {
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 1000px) {
+
+    .bottom-navigation {
+        max-width: 600px;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        border-radius: 20px 20px 0 0;
+    }
+
+}
+/* =========================================
+   POPUPS
+========================================= */
+
+.popup-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.60);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 200;
+}
+
+.popup-overlay.show {
+    display: flex;
+}
+
+.country-popup,
+.search-popup {
+    width: 100%;
+
+    max-width: 430px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    position: relative;
+
+    max-height: 80vh;
+
+    overflow-y: auto;
+}
+
+.popup-close {
+    position: absolute;
+
+    top: 13px;
+    right: 17px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 30px;
+
+    color: #777;
+
+    cursor: pointer;
+}
+
+.country-popup h2,
+.search-popup h2 {
+    font-size: 22px;
+
+    margin-bottom: 7px;
+}
+
+.country-popup > p,
+.search-popup > p {
+    color: #858b91;
+
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.all-countries {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px;
+}
+
+.all-countries button {
+    border: none;
+
+    background: #f2f4f6;
+
+    padding: 12px 10px;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.all-countries button:hover {
+    background: #eee1fa;
+}
+
+
+/* SEARCH */
+
+.search-box {
+    height: 52px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 15px;
+
+    margin-bottom: 15px;
+}
+
+.search-box .search-icon {
+    color: #9b9b9b;
+
+    width: 18px;
+    height: 18px;
+
+    border-width: 2px;
+
+    flex-shrink: 0;
+}
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (min-width: 700px) {
+
+    .home-header {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .home-content {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .party-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 1000px) {
+
+    body {
+        max-width: 1200px;
+
+        margin: auto;
+
+        background: #eceef1;
+    }
+
+    .home-header {
+        border-radius: 0 0 18px 18px;
+    }
+
+    .bottom-navigation {
+        max-width: 600px;
+
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        border-radius: 20px 20px 0 0;
+    }
+
+    .create-party-button {
+        right: calc(50% - 570px);
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 390px) {
+
+    .home-header {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .home-tabs {
+        gap: 22px;
+    }
+
+    .top-tab {
+        font-size: 19px;
+    }
+
+    .country-button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .feature-card {
+        height: 100px;
+        padding: 14px;
+    }
+
+    .feature-text {
+        font-size: 22px;
+    }
+
+    .feature-illustration {
+        font-size: 27px;
+    }
+
+    .party-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .party-cover {
+        height: 160px;
+    }
+
+    .promo-content h2 {
+        font-size: 22px;
+    }
+
+    .promo-symbol {
+        right: 15px;
+        font-size: 70px;
+    }
+
+}

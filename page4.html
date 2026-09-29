@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>LARCK - Messages</title>
+
+    <link rel="stylesheet" href="page4.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     MESSAGE HEADER
+========================================= -->
+
+<header class="message-header">
+
+    <div class="message-top">
+
+        <h1>
+            Message
+        </h1>
+
+
+        <div class="message-actions">
+
+            <!-- SEARCH -->
+
+            <button
+                class="message-action"
+                id="searchButton"
+                aria-label="Search"
+            >
+
+                <svg viewBox="0 0 24 24">
+
+                    <circle
+                        cx="10.5"
+                        cy="10.5"
+                        r="6.8"
+                    ></circle>
+
+                    <path
+                        d="M16 16l5 5"
+                    ></path>
+
+                </svg>
+
+            </button>
+
+
+            <!-- NOTIFICATION / SYSTEM -->
+
+            <button
+                class="message-action"
+                id="notificationButton"
+                aria-label="Notifications"
+            >
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M6 9a6 6 0 0 1 12 0v4"
+                    ></path>
+
+                    <path
+                        d="M4 17h16"
+                    ></path>
+
+                    <path
+                        d="M8 17c.4 2 1.7 3 4 3s3.6-1 4-3"
+                    ></path>
+
+                    <path
+                        d="M4 13v4"
+                    ></path>
+
+                    <path
+                        d="M20 13v4"
+                    ></path>
+
+                </svg>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         SPECIAL MESSAGE SHORTCUTS
+    ====================================== -->
+
+    <div class="message-shortcuts">
+
+
+        <!-- SYSTEM -->
+
+        <button
+            class="shortcut-item"
+            id="systemShortcut"
+        >
+
+            <div class="shortcut-icon system-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M7 10a5 5 0 0 1 10 0v4"
+                    ></path>
+
+                    <path
+                        d="M5 17h14"
+                    ></path>
+
+                    <path
+                        d="M8 17c.5 2 1.8 3 4 3s3.5-1 4-3"
+                    ></path>
+
+                    <path
+                        d="M4 14h2"
+                    ></path>
+
+                    <path
+                        d="M18 14h2"
+                    ></path>
+
+                </svg>
+
+            </div>
+
+            <span>
+                System
+            </span>
+
+        </button>
+
+
+
+        <!-- LARCK TEAM -->
+
+        <button
+            class="shortcut-item"
+            id="teamShortcut"
+        >
+
+            <div class="shortcut-icon team-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                    <path
+                        d="M8 14a5 5 0 0 1 0-10"
+                    ></path>
+
+                    <path
+                        d="M16 14a5 5 0 0 0 0-10"
+                    ></path>
+
+                    <path
+                        d="M8 14v4"
+                    ></path>
+
+                    <path
+                        d="M16 14v4"
+                    ></path>
+
+                    <path
+                        d="M6 20h12"
+                    ></path>
+
+                    <path
+                        d="M10 10h4"
+                    ></path>
+
+                </svg>
+
+            </div>
+
+            <span>
+                LARCK Team
+            </span>
+
+        </button>
+
+
+
+        <!-- ACTIVITY -->
+
+        <button
+            class="shortcut-item"
+            id="activityShortcut"
+        >
+
+            <div class="shortcut-icon activity-icon">
+
+                <svg viewBox="0 0 24 24">
+
+                    <circle
+                        cx="9"
+                        cy="8"
+                        r="3"
+                    ></circle>
+
+                    <circle
+                        cx="16"
+                        cy="9"
+                        r="2.5"
+                    ></circle>
+
+                    <path
+                        d="M3.5 20c.5-3.5 2.5-5 5.5-5s5 1.5 5.5 5"
+                    ></path>
+
+                    <path
+                        d="M14 15c2.7-.2 4.8 1.2 5.5 4"
+                    ></path>
+
+                </svg>
+
+            </div>
+
+            <span>
+                Activity
+            </span>
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN MESSAGE AREA
+========================================= -->
+
+<main class="message-content">
+
+
+    <!-- EMPTY CONVERSATION STATE -->
+
+    <section
+        class="empty-messages"
+        id="emptyMessages"
+    >
+
+        <div class="empty-illustration">
+
+            <div class="house-glow"></div>
+
+
+            <div class="house">
+
+                <div class="house-roof"></div>
+
+                <div class="house-body">
+
+                    <div class="house-window"></div>
+
+                    <div class="house-door"></div>
+
+                </div>
+
+            </div>
+
+
+            <span class="floating-dot dot-one"></span>
+
+            <span class="floating-dot dot-two"></span>
+
+            <span class="floating-dot dot-three"></span>
+
+        </div>
+
+
+        <h2>
+            No conversations yet
+        </h2>
+
+        <p>
+            Start chatting with your friends
+            and party members.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CONVERSATION LIST
+         Hidden until conversations exist
+    ====================================== -->
+
+    <section
+        class="conversation-list"
+        id="conversationList"
+    >
+
+        <!-- Conversations will be added here
+             when the LARCK messaging system
+             is connected. -->
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     SEARCH POPUP
+========================================= -->
+
+<div
+    class="popup-overlay"
+    id="searchPopup"
+>
+
+    <div class="search-card">
+
+        <button
+            class="close-popup"
+            id="closeSearch"
+        >
+            ×
+        </button>
+
+        <h2>
+            Search Messages
+        </h2>
+
+        <div class="search-box">
+
+            <svg viewBox="0 0 24 24">
+
+                <circle
+                    cx="10.5"
+                    cy="10.5"
+                    r="6.8"
+                ></circle>
+
+                <path
+                    d="M16 16l5 5"
+                ></path>
+
+            </svg>
+
+            <input
+                type="text"
+                id="messageSearch"
+                placeholder="Search conversations..."
+            >
+
+        </div>
+
+        <p id="searchMessage">
+            Search for a friend or conversation.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     SYSTEM POPUP
+========================================= -->
+
+<div
+    class="popup-overlay"
+    id="systemPopup"
+>
+
+    <div class="info-card">
+
+        <button
+            class="close-popup"
+            id="closeSystem"
+        >
+            ×
+        </button>
+
+        <div class="info-card-icon system-icon">
+
+            <svg viewBox="0 0 24 24">
+
+                <path
+                    d="M7 10a5 5 0 0 1 10 0v4"
+                ></path>
+
+                <path
+                    d="M5 17h14"
+                ></path>
+
+                <path
+                    d="M8 17c.5 2 1.8 3 4 3s3.5-1 4-3"
+                ></path>
+
+            </svg>
+
+        </div>
+
+        <h2>
+            System
+        </h2>
+
+        <p>
+            LARCK system notifications and
+            important account updates will
+            appear here.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     LARCK TEAM POPUP
+========================================= -->
+
+<div
+    class="popup-overlay"
+    id="teamPopup"
+>
+
+    <div class="info-card">
+
+        <button
+            class="close-popup"
+            id="closeTeam"
+        >
+            ×
+        </button>
+
+        <div class="info-card-icon team-icon">
+
+            <svg viewBox="0 0 24 24">
+
+                <path
+                    d="M8 14a5 5 0 0 1 0-10"
+                ></path>
+
+                <path
+                    d="M16 14a5 5 0 0 0 0-10"
+                ></path>
+
+                <path
+                    d="M8 14v4"
+                ></path>
+
+                <path
+                    d="M16 14v4"
+                ></path>
+
+                <path
+                    d="M6 20h12"
+                ></path>
+
+            </svg>
+
+        </div>
+
+        <h2>
+            LARCK Team
+        </h2>
+
+        <p>
+            Official messages, support and
+            important announcements from
+            the LARCK team will appear here.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     ACTIVITY POPUP
+========================================= -->
+
+<div
+    class="popup-overlay"
+    id="activityPopup"
+>
+
+    <div class="info-card">
+
+        <button
+            class="close-popup"
+            id="closeActivity"
+        >
+            ×
+        </button>
+
+        <div class="info-card-icon activity-icon">
+
+            <svg viewBox="0 0 24 24">
+
+                <circle
+                    cx="9"
+                    cy="8"
+                    r="3"
+                ></circle>
+
+                <circle
+                    cx="16"
+                    cy="9"
+                    r="2.5"
+                ></circle>
+
+                <path
+                    d="M3.5 20c.5-3.5 2.5-5 5.5-5s5 1.5 5.5 5"
+                ></path>
+
+            </svg>
+
+        </div>
+
+        <h2>
+            Activity
+        </h2>
+
+        <p>
+            New followers, gifts, party
+            invitations and other activities
+            will appear here.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     BOTTOM NAVIGATION
+========================================= -->
+
+<nav class="bottom-navigation">
+
+
+    <!-- HOME -->
+
+    <button
+        class="bottom-nav-item"
+        data-page="home"
+    >
+
+        <span class="bottom-icon">
+
+            <svg viewBox="0 0 24 24">
+
+                <path
+                    d="M3 10.8L12 3l9 7.8"
+                ></path>
+
+                <path
+                    d="M5.5 9.8V21h13V9.8"
+                ></path>
+
+                <path
+                    d="M9.5 21v-6h5v6"
+                ></path>
+
+            </svg>
+
+        </span>
+
+        <span class="bottom-label">
+            Home
+        </span>
+
+    </button>
+
+
+
+    <!-- PARTY -->
+
+    <button
+        class="bottom-nav-item"
+        data-page="party"
+    >
+
+        <span class="bottom-icon">
+
+            <svg viewBox="0 0 24 24">
+
+                <path
+                    d="M4 21h16"
+                ></path>
+
+                <path
+                    d="M6 18v-6"
+                ></path>
+
+                <path
+                    d="M10 18V8"
+                ></path>
+
+                <path
+                    d="M14 18v-9"
+                ></path>
+
+                <path
+                    d="M18 18V5"
+                ></path>
+
+                <path
+                    d="M6 5l4-2 4 3 4-2"
+                ></path>
+
+            </svg>
+
+        </span>
+
+        <span class="bottom-label">
+            Party
+        </span>
+
+    </button>
+
+
+
+    <!-- MESSAGE -->
+
+    <button
+        class="bottom-nav-item active"
+        data-page="message"
+    >
+
+        <span class="bottom-icon">
+
+            <svg viewBox="0 0 24 24">
+
+                <path
+                    d="M20 11.5a7.5 7.5 0 0 1-8 7.5
+                    8.6 8.6 0 0 1-3.2-.6
+                    L4 20l1.6-3.8
+                    A7.1 7.1 0 0 1 4 11.5
+                    7.5 7.5 0 0 1 12 4
+                    7.5 7.5 0 0 1 20 11.5Z"
+                ></path>
+
+                <path
+                    d="M8 11.5h.01"
+                ></path>
+
+                <path
+                    d="M12 11.5h.01"
+                ></path>
+
+                <path
+                    d="M16 11.5h.01"
+                ></path>
+
+            </svg>
+
+        </span>
+
+        <span class="bottom-label">
+            Message
+        </span>
+
+    </button>
+
+
+
+    <!-- ME -->
+
+    <button
+        class="bottom-nav-item"
+        data-page="me"
+    >
+
+        <span class="bottom-icon">
+
+            <svg viewBox="0 0 24 24">
+
+                <circle
+                    cx="12"
+                    cy="8"
+                    r="3.5"
+                ></circle>
+
+                <path
+                    d="M5 21c.7-4 3.2-6 7-6
+                    s6.3 2 7 6"
+                ></path>
+
+            </svg>
+
+        </span>
+
+        <span class="bottom-label">
+            Me
+        </span>
+
+    </button>
+
+</nav>
+
+
+
+<script src="page4.js"></script>
+<script src="room-presence.js"></script>
+
+</body>
+
+</html>

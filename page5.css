@@ -1,0 +1,1341 @@
+/* =========================================
+LARCK ME PAGE
+========================================= */
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
+html,
+body {
+width: 100%;
+min-height: 100%;
+}
+
+body {
+
+font-family:  
+    Arial,  
+    Helvetica,  
+    sans-serif;  
+
+background: #f5f6f8;  
+
+color: #171719;  
+
+min-height: 100vh;  
+
+padding-bottom: 82px;  
+
+overflow-x: hidden;
+
+}
+
+/* =========================================
+PROFILE HEADER
+========================================= */
+
+.profile-header {
+
+position: relative;  
+
+width: 100%;  
+
+min-height: 420px;  
+
+overflow: hidden;  
+
+background:  
+    linear-gradient(  
+        180deg,  
+        #08c9c5 0%,  
+    #58d9d5 30%,  
+    #d9f7f6 65%,  
+    #ffffff 100%  
+);
+
+}
+
+/* Decorative background */
+
+.profile-background::before {
+
+content: "";  
+
+position: absolute;  
+
+width: 230px;  
+
+height: 230px;  
+
+border-radius: 50%;  
+
+top: -100px;  
+
+right: 45px;  
+
+background:  
+    rgba(255,255,255,.12);
+
+}
+
+.profile-background::after {
+
+content: "";  
+
+position: absolute;  
+
+width: 310px;  
+
+height: 310px;  
+
+border-radius: 50%;  
+
+bottom: -230px;  
+
+left: -70px;  
+
+background:  
+    rgba(255,255,255,.12);
+
+}
+
+/* =========================================
+PROFILE
+========================================= */
+
+.profile-area {
+
+position: relative;  
+
+z-index: 2;  
+
+display: flex;  
+
+align-items: center;  
+
+padding:  
+    145px  
+    38px  
+    0;  
+
+gap: 18px;
+
+}
+
+/* =========================================
+PROFILE AVATAR
+========================================= */
+
+.profile-avatar {
+
+flex-shrink: 0;  
+
+width: 115px;  
+
+height: 115px;  
+
+border-radius: 50%;  
+
+background:  
+    linear-gradient(  
+        145deg,  
+        #6573d0,  
+        #5064bd  
+    );  
+
+display: flex;  
+
+align-items: center;  
+
+justify-content: center;  
+
+box-shadow:  
+    0 5px 15px  
+    rgba(65,55,150,.18);
+
+}
+
+.profile-avatar span {
+
+color: white;  
+
+font-size: 58px;  
+
+font-weight: 300;
+
+}
+
+/* =========================================
+PROFILE INFORMATION
+========================================= */
+
+.profile-information {
+
+flex: 1;  
+
+min-width: 0;
+
+}
+
+.profile-name {
+
+display: flex;  
+
+align-items: center;  
+
+gap: 7px;
+
+}
+
+.username {
+
+font-size: 30px;  
+
+font-weight: 700;  
+
+color: #111;
+
+}
+
+.country-flag {
+
+font-size: 27px;
+
+}
+
+.profile-id {
+
+display: flex;  
+
+align-items: center;  
+
+gap: 5px;  
+
+margin-top: 8px;  
+
+color: #74767b;  
+
+font-size: 22px;
+
+}
+
+/* =========================================
+COPY ID
+========================================= */
+
+.copy-id {
+
+border: none;  
+
+background: transparent;  
+
+padding: 3px;  
+
+cursor: pointer;
+
+}
+
+.copy-id svg {
+
+width: 21px;  
+
+height: 21px;  
+
+fill: none;  
+
+stroke: #74767b;  
+
+stroke-width: 1.7;  
+
+stroke-linecap: round;  
+
+stroke-linejoin: round;
+
+}
+
+/* =========================================
+PROFILE ARROW
+========================================= */
+
+.profile-arrow {
+
+width: 40px;  
+
+height: 50px;  
+
+border: none;  
+
+background: transparent;  
+
+cursor: pointer;
+
+}
+
+.profile-arrow svg {
+
+width: 32px;  
+
+height: 32px;  
+
+fill: none;  
+
+stroke: #888;  
+
+stroke-width: 1.5;  
+
+stroke-linecap: round;  
+
+stroke-linejoin: round;
+
+}
+
+/* =========================================
+PROFILE STATS
+========================================= */
+
+.profile-stats {
+
+position: relative;  
+
+z-index: 2;  
+
+display: grid;  
+
+grid-template-columns:  
+    repeat(3, 1fr);  
+
+margin-top: 60px;  
+
+padding:  
+    0  
+    35px;
+
+}
+
+.stat {
+
+display: flex;  
+
+flex-direction: column;  
+
+align-items: center;  
+
+gap: 20px;
+
+}
+
+.stat strong {
+
+font-size: 28px;  
+
+font-weight: 600;
+
+}
+
+.stat span {
+
+color: #898d94;  
+
+font-size: 24px;
+
+}
+
+/* =========================================
+MAIN CONTENT
+========================================= */
+
+.me-content {
+
+width: 100%;  
+
+padding:  
+    0  
+    30px  
+    30px;  
+
+margin-top: -2px;  
+
+position: relative;  
+
+z-index: 5;
+
+}
+
+/* =========================================
+WALLET CARDS
+========================================= */
+
+.wallet-row {
+
+display: grid;  
+
+grid-template-columns:  
+    repeat(2, 1fr);  
+
+gap: 15px;  
+
+margin-bottom: 24px;
+
+}
+
+.wallet-card {
+
+height: 115px;  
+
+border: none;  
+
+border-radius: 16px;  
+
+display: flex;  
+
+align-items: center;  
+
+justify-content: space-between;  
+
+padding:  
+    18px  
+    16px  
+    18px  
+    24px;  
+
+cursor: pointer;  
+
+overflow: hidden;
+
+}
+
+/* COINS */
+
+.coins-card {
+
+background:  
+    linear-gradient(  
+        110deg,  
+        #fff1a2,  
+        #ffe47e  
+    );
+
+}
+
+/* POINTS */
+
+.points-card {
+
+background:  
+    linear-gradient(  
+        110deg,  
+        #ffd9ec,  
+        #ffd3ec  
+    );
+
+}
+
+/* =========================================
+WALLET INFORMATION
+========================================= */
+
+.wallet-information {
+
+display: flex;  
+
+flex-direction: column;  
+
+align-items: flex-start;  
+
+gap: 8px;
+
+}
+
+.wallet-title {
+
+font-size: 23px;  
+
+color: #777;  
+
+font-weight: 500;
+
+}
+
+.wallet-value {
+
+display: flex;  
+
+align-items: center;  
+
+gap: 7px;  
+
+font-size: 21px;  
+
+color: #222;  
+
+font-weight: 500;
+
+}
+
+.coin-small {
+
+font-size: 19px;
+
+}
+
+.point-small {
+
+width: 20px;  
+
+height: 20px;  
+
+border-radius: 50%;  
+
+display: flex;  
+
+align-items: center;  
+
+justify-content: center;  
+
+background: #ed62a3;  
+
+color: white;  
+
+font-size: 12px;  
+
+font-weight: bold;
+
+}
+
+.wallet-arrow {
+
+font-size: 25px;  
+
+color: #777;  
+
+line-height: 1;
+
+}
+
+/* =========================================
+BIG WALLET SYMBOL
+========================================= */
+
+.wallet-symbol {
+
+width: 65px;  
+
+height: 65px;  
+
+border-radius: 50%;  
+
+display: flex;  
+
+align-items: center;  
+
+justify-content: center;  
+
+font-weight: 700;  
+
+font-size: 35px;
+
+}
+
+/* COIN */
+
+.coin-symbol {
+
+background:  
+    radial-gradient(  
+        circle at 35% 30%,  
+        #fff5a7,  
+        #f9c600  
+    );  
+
+color: white;  
+
+text-shadow:  
+    0 2px 3px  
+    rgba(160,100,0,.3);  
+
+box-shadow:  
+    inset 0 0 0 4px  
+    rgba(255,255,255,.25);
+
+}
+
+/* POINT */
+
+.points-symbol {
+
+background:  
+    radial-gradient(  
+        circle at 35% 30%,  
+        #ffafd3,  
+        #ed5b9e  
+    );  
+
+color: white;  
+
+font-size: 34px;  
+
+box-shadow:  
+    inset 0 0 0 4px  
+    rgba(255,255,255,.25);
+
+}
+
+/* =========================================
+FEATURE PANEL
+========================================= */
+
+.feature-panel {
+
+background: white;  
+
+border-radius: 22px;  
+
+padding:  
+    28px  
+    20px  
+    25px;  
+
+display: grid;  
+
+grid-template-columns:  
+    repeat(4, 1fr);  
+
+row-gap: 28px;  
+
+margin-bottom: 24px;  
+
+box-shadow:  
+    0 2px 10px  
+    rgba(0,0,0,.02);
+
+}
+
+/* =========================================
+FEATURE ITEMS
+========================================= */
+
+.feature-item {
+
+border: none;  
+
+background: transparent;  
+
+display: flex;  
+
+flex-direction: column;  
+
+align-items: center;  
+
+gap: 9px;  
+
+cursor: pointer;  
+
+color: #1d1d20;  
+
+font-size: 17px;  
+
+white-space: nowrap;  
+
+transition:  
+    transform 0.2s ease;
+
+}
+
+.feature-item:active {
+
+transform: scale(.94);
+
+}
+
+/* =========================================
+FEATURE ICON CONTAINER
+========================================= */
+
+.feature-icon {
+
+width: 66px;  
+
+height: 66px;  
+
+border-radius: 20px;  
+
+display: flex;  
+
+align-items: center;  
+
+justify-content: center;
+
+}
+
+/* =========================================
+FEATURE SVG ICONS
+========================================= */
+
+.feature-icon svg {
+
+width: 37px;  
+
+height: 37px;  
+
+fill: none;  
+
+stroke: currentColor;  
+
+stroke-width: 1.7;  
+
+stroke-linecap: round;  
+
+stroke-linejoin: round;
+
+}
+
+/* =========================================
+LEVEL
+========================================= */
+
+.level-icon {
+
+background:  
+    linear-gradient(  
+        145deg,  
+        #f4efff,  
+        #eee7ff  
+    );  
+
+color: #9579eb;
+
+}
+
+/* =========================================
+STORE
+========================================= */
+
+.store-icon {
+
+background:  
+    linear-gradient(  
+        145deg,  
+        #fff0eb,  
+        #ffe3dd  
+    );  
+
+color: #f06b5e;
+
+}
+
+/* =========================================
+DRESS
+========================================= */
+
+.dress-icon {
+
+background:  
+    linear-gradient(  
+        145deg,  
+        #eaf6ff,  
+        #dceeff  
+    );  
+
+color: #55a9e9;
+
+}
+
+/* =========================================
+HOST CENTER
+========================================= */
+
+.host-icon {
+
+background:  
+    linear-gradient(  
+        145deg,  
+        #fff0f5,  
+        #ffe7ef  
+    );  
+
+color: #ec5b9b;
+
+}
+
+/* =========================================
+RECHARGE
+========================================= */
+
+.recharge-icon {
+
+background:  
+    linear-gradient(  
+        145deg,  
+        #e8f5ff,  
+        #d8ecff  
+    );  
+
+color: #409de8;
+
+}
+
+/* =========================================
+TASK
+========================================= */
+
+.task-icon {
+
+background:  
+    linear-gradient(  
+        145deg,  
+        #f8ecff,  
+        #eee0ff  
+    );  
+
+color: #a45ee6;
+
+}
+
+/* =========================================
+INVITE FRIENDS
+========================================= */
+
+.invite-icon {
+
+background:  
+    linear-gradient(  
+        145deg,  
+        #fff7db,  
+        #fff0c0  
+    );  
+
+color: #ef9d12;
+
+}
+
+/* =========================================
+ACCOUNT MENU
+========================================= */
+
+.account-menu {
+
+background: white;  
+
+border-radius: 22px;  
+
+overflow: hidden;  
+
+margin-bottom: 25px;
+
+}
+
+.menu-row {
+
+width: 100%;  
+
+min-height: 88px;  
+
+border: none;  
+
+border-bottom:  
+    1px solid #eeeeee;  
+
+background: white;  
+
+display: flex;  
+
+align-items: center;  
+
+justify-content: space-between;  
+
+padding:  
+    0  
+    28px;  
+
+font-size: 21px;  
+
+color: #242428;  
+
+cursor: pointer;
+
+}
+
+.menu-row:last-child {
+
+border-bottom: none;
+
+}
+
+/* =========================================
+ACCOUNT MENU LEFT
+========================================= */
+
+.menu-left {
+
+display: flex;  
+
+align-items: center;  
+
+gap: 22px;
+
+}
+
+.menu-icon {
+
+width: 32px;  
+
+height: 32px;  
+
+display: flex;  
+
+align-items: center;  
+
+justify-content: center;
+
+}
+
+.menu-icon svg {
+
+width: 30px;  
+
+height: 30px;  
+
+fill: none;  
+
+stroke: #111;  
+
+stroke-width: 1.7;  
+
+stroke-linecap: round;  
+
+stroke-linejoin: round;
+
+}
+
+.menu-arrow {
+
+color: #b1b4b8;  
+
+font-size: 35px;  
+
+font-weight: 300;
+
+}
+
+/* =========================================
+BOTTOM NAVIGATION
+========================================= */
+
+.bottom-navigation {
+
+position: fixed;  
+
+left: 0;  
+
+bottom: 0;  
+
+width: 100%;  
+
+height: 82px;  
+
+z-index: 100;  
+
+display: grid;  
+
+grid-template-columns:  
+    repeat(4, 1fr);  
+
+background:  
+    linear-gradient(  
+        135deg,  
+        #08c9c5,  
+        #08c9c5  
+    );  
+
+box-shadow:  
+    0 -5px 20px  
+    rgba(90,30,150,.22);
+
+}
+
+.bottom-nav-item {
+
+position: relative;  
+
+border: none;  
+
+background: transparent;  
+
+color:  
+    rgba(255,255,255,.65);  
+
+display: flex;  
+
+flex-direction: column;  
+
+align-items: center;  
+
+justify-content: center;  
+
+gap: 5px;  
+
+font-size: 12px;  
+
+font-weight: 600;  
+
+cursor: pointer;  
+
+transition: .2s ease;
+
+}
+
+.bottom-icon {
+
+width: 31px;  
+
+height: 31px;  
+
+display: flex;  
+
+align-items: center;  
+
+justify-content: center;
+
+}
+
+.bottom-icon svg {
+
+width: 28px;  
+
+height: 28px;  
+
+fill: none;  
+
+stroke: currentColor;  
+
+stroke-width: 1.7;  
+
+stroke-linecap: round;  
+
+stroke-linejoin: round;
+
+}
+
+/* ACTIVE NAV */
+
+.bottom-nav-item.active {
+
+color: #ffe934;
+
+}
+
+.bottom-nav-item.active
+.bottom-icon {
+
+transform: scale(1.1);  
+
+filter:  
+    drop-shadow(  
+        0 2px 6px  
+        rgba(255,255,255,.25)  
+    );
+
+}
+
+.bottom-nav-item.active
+.bottom-icon svg {
+
+stroke-width: 2.2;
+
+}
+
+.bottom-nav-item.active::before {
+
+content: "";  
+
+position: absolute;  
+
+top: 0;  
+
+width: 35px;  
+
+height: 3px;  
+
+border-radius:  
+    0 0 8px 8px;  
+
+background: #ffe934;
+
+}
+
+/* =========================================
+MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+.profile-header {  
+
+    min-height: 420px;  
+}  
+
+
+.profile-area {  
+
+    padding:  
+        145px  
+        30px  
+        0;  
+
+    gap: 15px;  
+}  
+
+
+.profile-avatar {  
+
+    width: 105px;  
+
+    height: 105px;  
+}  
+
+
+.profile-avatar span {  
+
+    font-size: 53px;  
+}  
+
+
+.username {  
+
+    font-size: 27px;  
+}  
+
+
+.profile-id {  
+
+    font-size: 20px;  
+}  
+
+
+.profile-stats {  
+
+    padding:  
+        0  
+        25px;  
+
+    margin-top: 58px;  
+}  
+
+
+.stat strong {  
+
+    font-size: 26px;  
+}  
+
+
+.stat span {  
+
+    font-size: 22px;  
+}  
+
+
+.me-content {  
+
+    padding:  
+        0  
+        20px  
+        25px;  
+}  
+
+
+.wallet-card {  
+
+    height: 110px;  
+
+    padding-left: 18px;  
+}  
+
+
+.wallet-title {  
+
+    font-size: 21px;  
+}  
+
+
+.wallet-symbol {  
+
+    width: 58px;  
+
+    height: 58px;  
+}  
+
+
+.feature-panel {  
+
+    padding:  
+        25px  
+        12px;  
+}  
+
+
+.feature-item {  
+
+    font-size: 15px;  
+}  
+
+
+.feature-icon {  
+
+    width: 62px;  
+
+    height: 62px;  
+}  
+
+
+.menu-row {  
+
+    min-height: 80px;  
+
+    padding:  
+        0  
+        22px;  
+
+    font-size: 19px;  
+}
+
+}
+
+/* =========================================
+SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+.profile-area {  
+
+    padding-left: 20px;  
+
+    padding-right: 20px;  
+}  
+
+
+.profile-avatar {  
+
+    width: 92px;  
+
+    height: 92px;  
+}  
+
+
+.profile-avatar span {  
+
+    font-size: 47px;  
+}  
+
+
+.username {  
+
+    font-size: 24px;  
+}  
+
+
+.profile-id {  
+
+    font-size: 18px;  
+}  
+
+
+.profile-stats {  
+
+    padding:  
+        0  
+        15px;  
+}  
+
+
+.stat span {  
+
+    font-size: 18px;  
+}  
+
+
+.wallet-row {  
+
+    gap: 10px;  
+}  
+
+
+.wallet-card {  
+
+    padding:  
+        14px  
+        10px;  
+}  
+
+
+.wallet-title {  
+
+    font-size: 18px;  
+}  
+
+
+.wallet-value {  
+
+    font-size: 17px;  
+}  
+
+
+.wallet-symbol {  
+
+    width: 50px;  
+
+    height: 50px;  
+
+    font-size: 27px;  
+}  
+
+
+.feature-panel {  
+
+    grid-template-columns:  
+        repeat(4, 1fr);  
+
+    padding:  
+        20px  
+        5px;  
+}  
+
+
+.feature-icon {  
+
+    width: 55px;  
+
+    height: 55px;  
+
+    border-radius: 17px;  
+}  
+
+
+.feature-icon svg {  
+
+    width: 31px;  
+
+    height: 31px;  
+}  
+
+
+.feature-item {  
+
+    font-size: 12px;  
+}  
+
+
+.menu-row {  
+
+    font-size: 17px;  
+
+    padding:  
+        0  
+        17px;  
+}
+
+}

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LARCK Party Room</title>
+    <link rel="stylesheet" href="page6.css">
+</head>
+
+<body>
+
+<main class="party-room">
+
+    <!-- =========================
+         ROOM HEADER
+    ========================== -->
+    <header class="room-header">
+
+        <button class="header-icon" id="roomBack" aria-label="Back">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 5L8 12L15 19"></path>
+            </svg>
+        </button>
+
+        <div class="room-profile">
+
+            <div class="room-profile-picture">
+                <img src="images/host.jpg" alt="Host">
+                <span class="profile-online"></span>
+            </div>
+
+            <div class="room-profile-info">
+                <h1>Boredom killer</h1>
+                <span>ID: 1482469667</span>
+            </div>
+
+        </div>
+
+        <div class="header-status">
+
+            <div class="status-pill music-pill">
+                <span>🎤</span>
+                <span>Music</span>
+            </div>
+
+            <div class="status-pill host-pill">
+                <span>👑</span>
+                <span>Top Host</span>
+            </div>
+
+            <div class="status-pill people-pill">
+                <span>👥</span>
+                <span id="headerOnline">234</span>
+            </div>
+
+        </div>
+
+        <div class="header-right">
+
+            <div class="crown-count">
+                <span>♛</span>
+                <strong>1</strong>
+            </div>
+
+            <button class="exit-button" id="roomPower">
+
+    <svg viewBox="0 0 24 24">
+        <path d="M12 3V12"></path>
+        <path d="M18.36 5.64A9 9 0 1 1 5.64 5.64"></path>
+    </svg>
+
+</button>
+
+<div class="room-power-popup" id="roomPowerPopup">
+
+    <button id="minimizeRoom">
+        Minimize
+    </button>
+
+    <button id="exitRoom">
+        Exit
+    </button>
+
+</div>
+
+            <button class="header-icon" id="roomMenu" aria-label="Room menu">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 9L12 15L18 9"></path>
+                </svg>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         PARTY STAGE
+    ========================== -->
+
+    <section class="room-stage">
+
+        <div class="stage-light light-one"></div>
+        <div class="stage-light light-two"></div>
+        <div class="stage-light light-three"></div>
+
+        <div class="stage-title">
+            <span>Boredom Killer</span>
+            <small>Welcome to LARCK</small>
+        </div>
+
+
+        <div class="room-locked-indicator" id="roomLockedIndicator">
+            🔒 
+        </div>
+
+
+        <!-- HOST -->
+
+        <div class="host-seat">
+
+            <div class="host-crown">♛</div>
+
+            <div class="host-ring">
+
+                <img src="images/host.jpg" alt="Host">
+
+                <span class="host-mic">
+                    🎤
+                </span>
+
+            </div>
+
+            <div class="host-name">
+                🎤 Larck King
+            </div>
+
+            <div class="host-gift">
+                🎁 0
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             DYNAMIC SEAT AREA
+             JAVASCRIPT CREATES 1-30
+        ========================== -->
+
+        <div class="seat-area" id="seatArea"></div>
+
+    </section>
+
+
+    <!-- =========================
+         LIVE CHAT
+    ========================== -->
+
+    <section class="live-chat">
+
+        <div class="chat-top">
+
+            <div>
+                <h2>Live Chat</h2>
+                <span>234 people in room</span>
+            </div>
+
+            <div class="chat-online">
+                ● Live
+            </div>
+
+        </div>
+
+        <div class="chat-list" id="chatMessages">
+
+            <div class="room-welcome">
+                <strong>Welcome to LARCK 🎙️</strong>
+
+                <span>
+                    Please respect everyone in the room.
+                </span>
+            </div>
+
+            <div class="room-rule">
+                No spam, insults, or disturbing other members.
+            </div>
+
+            <div class="message-row">
+                <strong>Sarah</strong>
+                <span>Hello everyone 👋</span>
+            </div>
+
+            <div class="message-row">
+                <strong>Mike</strong>
+                <span>Nice room 🔥</span>
+            </div>
+
+            <div class="message-row">
+                <strong>David</strong>
+                <span>What's happening tonight?</span>
+            </div>
+
+            <div class="message-row">
+                <strong>Linda</strong>
+                <span>Good vibes ❤️</span>
+            </div>
+
+        </div>
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="Type a message..."
+                autocomplete="off"
+            >
+
+            <button id="sendChat" aria-label="Send">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M21 3L10 14"></path>
+                    <path d="M21 3L14 21L10 14L3 10L21 3Z"></path>
+                </svg>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TOOLS
+    ========================== -->
+
+    <div class="tools-overlay" id="toolsOverlay"></div>
+
+    <section class="tools-panel" id="toolsPanel">
+
+        <div class="tools-handle"></div>
+
+        <div class="tools-heading">
+
+            <h2>✣ More Tools</h2>
+
+            <button class="close-round" id="closeTools">
+                ×
+            </button>
+
+        </div>
+
+        <div class="tool-grid">
+
+            <button class="tool-card" id="backgroundSettingsButton">
+                <span class="tool-icon">🖼</span>
+                <span>Background<br>Settings</span>
+            </button>
+
+            <button class="tool-card" id="lockRoomButton">
+                <span class="tool-icon">🔒</span>
+                <span>Lock Room</span>
+            </button>
+
+            <button class="tool-card" id="clearScreenButton">
+                <span class="tool-icon">▣</span>
+                <span>Clear Screen</span>
+            </button>
+
+            <button class="tool-card" id="effectMessageButton">
+                <span class="tool-icon" >✨</span>
+                <span>Effect & Message<br>Settings</span>
+            </button>
+
+            <button class="tool-card">
+                <span class="tool-icon">♪</span>
+                <span>My Music</span>
+            </button>
+
+        </div>
+
+        <div class="setup-title">
+            ⚙ Setup
+        </div>
+
+        <div class="setup-grid">
+
+            <button class="setup-card">
+                <span>✎</span>
+                <strong>Room Name</strong>
+            </button>
+
+            <button class="setup-card">
+                <span>◇</span>
+                <strong>Room Label</strong>
+            </button>
+
+            <button class="setup-card" id="micModeButton">
+                <span>🎤</span>
+                <strong>Mic Mode</strong>
+                <small>Free Mic⌄</small>
+            </button>
+
+            <button class="setup-card" id="seatLayoutButton">
+                <span>⠿</span>
+                <strong>Seat Layout</strong>
+                <small id="seatLayoutText">15 seats⌄</small>
+            </button>
+
+        </div>
+
+        <div class="quick-seat">
+
+            <div class="quick-seat-title">
+                <span>🎙</span>
+                <strong>Quick Seat Selection</strong>
+            </div>
+
+            <div class="seat-options">
+
+                <button class="seat-option" data-seats="10">10</button>
+
+                <button class="seat-option active" data-seats="15">
+                    15
+                </button>
+
+                <button class="seat-option" data-seats="20">
+                    20
+                </button>
+
+                <button class="seat-option" data-seats="30">
+                    30
+                </button>
+
+            </div>
+
+        </div>
+
+        <button class="save-button" id="saveTools">
+            ✓ Save
+        </button>
+
+    </section>
+
+    <!-- =========================
+     BACKGROUND SETTINGS
+========================== -->
+
+<div class="background-overlay" id="backgroundOverlay"></div>
+
+<section class="background-panel" id="backgroundPanel">
+
+    <div class="background-handle"></div>
+
+    <div class="background-heading">
+
+        <div>
+            <h2>🖼 Background Settings</h2>
+            <p>Customize your room background</p>
+        </div>
+
+        <button class="close-round" id="closeBackground">
+            ×
+        </button>
+
+    </div>
+
+
+    <!-- CURRENT BACKGROUND -->
+
+    <div class="background-preview">
+
+        <div class="preview-label">
+            Current Background
+        </div>
+
+        <div class="background-preview-box" id="backgroundPreviewBox">
+
+            <span id="backgroundPreviewText">
+                LARCK
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- BACKGROUND OPTIONS -->
+
+    <div class="background-section-title">
+        Choose Background
+    </div>
+
+    <div class="background-options">
+
+        <button
+            class="background-option active"
+            data-background="purple"
+        >
+            <span class="background-thumbnail purple-bg"></span>
+            <strong>Purple Night</strong>
+        </button>
+
+
+        <button
+            class="background-option"
+            data-background="space"
+        >
+            <span class="background-thumbnail space-bg"></span>
+            <strong>Dark Space</strong>
+        </button>
+
+
+        <button
+            class="background-option"
+            data-background="glow"
+        >
+            <span class="background-thumbnail glow-bg"></span>
+            <strong>LARCK Glow</strong>
+        </button>
+
+
+        <button
+            class="background-option"
+            data-background="ocean"
+        >
+            <span class="background-thumbnail ocean-bg"></span>
+            <strong>Ocean</strong>
+        </button>
+
+
+        <button
+            class="background-option"
+            data-background="red"
+        >
+            <span class="background-thumbnail red-bg"></span>
+            <strong>Dark Red</strong>
+        </button>
+
+
+        <button
+            class="background-option"
+            data-background="midnight"
+        >
+            <span class="background-thumbnail midnight-bg"></span>
+            <strong>Midnight</strong>
+        </button>
+
+    </div>
+
+
+    <button class="background-apply" id="applyBackground">
+        ✓ Apply Background
+    </button>
+
+</section>
+
+<!-- =========================================================
+     EFFECT & MESSAGE SETTINGS
+========================================================= -->
+
+<div class="effect-message-overlay" id="effectMessageOverlay"></div>
+
+<section class="effect-message-panel" id="effectMessagePanel">
+
+    <div class="effect-message-handle"></div>
+
+    <div class="effect-message-heading">
+        <div>
+            <h2>✨ Effect & Message Settings</h2>
+            <p>Customize your room experience</p>
+        </div>
+
+        <button class="close-round" id="closeEffectMessage">×</button>
+    </div>
+
+
+    <!-- ROOM EFFECTS -->
+
+    <div class="effect-section-title">
+        ✨ Room Effects
+    </div>
+
+    <div class="effect-options">
+
+        <button class="effect-option active" data-effect="normal">
+            <span class="effect-option-icon">🌙</span>
+            <div>
+                <strong>Normal</strong>
+                <small>Clean room experience</small>
+            </div>
+        </button>
+
+        <button class="effect-option" data-effect="sparkle">
+            <span class="effect-option-icon">✨</span>
+            <div>
+                <strong>Sparkle</strong>
+                <small>Light sparkle effects</small>
+            </div>
+        </button>
+
+        <button class="effect-option" data-effect="hearts">
+            <span class="effect-option-icon">💜</span>
+            <div>
+                <strong>Hearts</strong>
+                <small>Floating heart effects</small>
+            </div>
+        </button>
+
+        <button class="effect-option" data-effect="fire">
+            <span class="effect-option-icon">🔥</span>
+            <div>
+                <strong>Fire</strong>
+                <small>Animated fire effects</small>
+            </div>
+        </button>
+
+    </div>
+
+
+    <!-- MESSAGE SETTINGS -->
+
+    <div class="effect-section-title">
+        💬 Message Settings
+    </div>
+
+    <div class="message-setting-list">
+
+        <div class="message-setting">
+            <div>
+                <strong>Join Messages</strong>
+                <small>Show when someone joins</small>
+            </div>
+
+            <label class="setting-switch">
+                <input type="checkbox" id="joinMessagesToggle" checked>
+                <span></span>
+            </label>
+        </div>
+
+
+        <div class="message-setting">
+            <div>
+                <strong>Leave Messages</strong>
+                <small>Show when someone leaves</small>
+            </div>
+
+            <label class="setting-switch">
+                <input type="checkbox" id="leaveMessagesToggle" checked>
+                <span></span>
+            </label>
+        </div>
+
+
+        <div class="message-setting">
+            <div>
+                <strong>System Messages</strong>
+                <small>Show room notifications</small>
+            </div>
+
+            <label class="setting-switch">
+                <input type="checkbox" id="systemMessagesToggle" checked>
+                <span></span>
+            </label>
+        </div>
+
+
+        <div class="message-setting">
+            <div>
+                <strong>Gift Effects</strong>
+                <small>Show gift animations</small>
+            </div>
+
+            <label class="setting-switch">
+                <input type="checkbox" id="giftEffectsToggle" checked>
+                <span></span>
+            </label>
+        </div>
+
+    </div>
+
+
+    <button class="effect-message-apply" id="applyEffectMessage">
+        ✓ Save Settings
+    </button>
+
+</section>
+
+
+    <!-- =========================
+         GAMES
+    ========================== -->
+
+    <div class="games-overlay" id="gamesOverlay"></div>
+
+    <section class="games-panel" id="gamesPanel">
+
+        <div class="games-heading">
+
+            <div>
+                <h2>Games</h2>
+                <p>Choose a game to play</p>
+            </div>
+
+            <button class="close-round" id="closeGames">
+                ×
+            </button>
+
+        </div>
+
+        <div class="games-balance">
+
+            <span>🪙</span>
+
+            <div>
+                <small>Your Game Points</small>
+                <strong id="gamePoints">1,000</strong>
+            </div>
+
+        </div>
+
+        <div class="games-grid">
+
+            <button class="game-card" data-game="Ocean Hunt">
+                <span class="game-icon">🌊</span>
+                <strong>Ocean Hunt</strong>
+                <small>Hunt for treasures</small>
+                <b>Play</b>
+            </button>
+
+            <button class="game-card" data-game="Lucky 77">
+                <span class="game-icon">7️⃣</span>
+                <strong>Lucky 77</strong>
+                <small>Lucky number challenge</small>
+                <b>Play</b>
+            </button>
+
+            <button class="game-card" data-game="Fruit">
+                <span class="game-icon">🍎</span>
+                <strong>Fruit</strong>
+                <small>Fruit challenge</small>
+                <b>Play</b>
+            </button>
+
+            <button class="game-card" data-game="Greedy">
+                <span class="game-icon">🤑</span>
+                <strong>Greedy</strong>
+                <small>Collect the most</small>
+                <b>Play</b>
+            </button>
+
+            <button class="game-card" data-game="Crash">
+                <span class="game-icon">🚀</span>
+                <strong>Crash</strong>
+                <small>Timing challenge</small>
+                <b>Play</b>
+            </button>
+
+            <button class="game-card" data-game="Ludo">
+                <span class="game-icon">🎲</span>
+                <strong>Ludo</strong>
+                <small>Classic board game</small>
+                <b>Play</b>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BOTTOM CONTROLS
+    ========================== -->
+
+    <nav class="room-controls">
+
+        <!-- MIC -->
+
+        <button class="room-control active-control" id="micButton">
+
+            <span class="control-circle">
+
+                <svg viewBox="0 0 24 24">
+                    <rect x="8" y="3" width="8" height="12" rx="4"></rect>
+                    <path d="M5 11A7 7 0 0 0 19 11"></path>
+                    <path d="M12 18V22"></path>
+                </svg>
+
+            </span>
+
+            <small>Mic</small>
+
+        </button>
+
+
+        <!-- SPEAKER -->
+
+        <button class="room-control" id="speakerButton">
+
+            <span class="control-circle">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 10V14H8L13 19V5L8 10H4Z"></path>
+                    <path d="M17 9C18.5 10.5 18.5 13.5 17 15"></path>
+                </svg>
+
+            </span>
+
+            <small>Speaker</small>
+
+        </button>
+
+
+        <!-- GIFT -->
+
+        <button class="room-control" id="giftButton">
+
+            <span class="control-circle">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 10H20V20H4Z"></path>
+                    <path d="M3 7H21V10H3Z"></path>
+                    <path d="M12 7V20"></path>
+                    <path d="M12 7H8.5C7.1 7 6 5.9 6 4.5C6 3.7 6.7 3 7.5 3C10 3 12 7 12 7Z"></path>
+                    <path d="M12 7H15.5C16.9 7 18 5.9 18 4.5C18 3.7 17.3 3 16.5 3C14 3 12 7 12 7Z"></path>
+                </svg>
+
+            </span>
+
+            <small>Gift</small>
+
+        </button>
+
+
+        <!-- GAMES -->
+
+        <button class="room-control" id="gamesButton">
+
+            <span class="control-circle">
+
+                <svg viewBox="0 0 24 24">
+                    <path d="M7 8H17C19.2 8 21 9.8 21 12V16C21 18.2 19.2 20 17 20C15.6 20 14.6 19.2 13.8 18L12 16H10L8.2 18C7.4 19.2 6.4 20 5 20C2.8 20 1 18.2 1 16V12C1 9.8 2.8 8 5 8H7Z"></path>
+                    <path d="M6 11V15"></path>
+                    <path d="M4 13H8"></path>
+                    <circle cx="16.5" cy="12.5" r="1"></circle>
+                    <circle cx="18.5" cy="15" r="1"></circle>
+                </svg>
+
+            </span>
+
+            <small>Games</small>
+
+        </button>
+
+
+        <!-- MORE -->
+
+        <button class="room-control" id="moreButton">
+
+            <span class="control-circle">
+
+                <svg viewBox="0 0 24 24">
+                    <circle cx="6" cy="6" r="2"></circle>
+                    <circle cx="12" cy="6" r="2"></circle>
+                    <circle cx="18" cy="6" r="2"></circle>
+                    <circle cx="6" cy="12" r="2"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                    <circle cx="18" cy="12" r="2"></circle>
+                    <circle cx="6" cy="18" r="2"></circle>
+                    <circle cx="12" cy="18" r="2"></circle>
+                    <circle cx="18" cy="18" r="2"></circle>
+                </svg>
+
+            </span>
+
+            <small>More</small>
+
+        </button>
+
+    </nav>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="page6.js"></script>
+</body>
+</html>

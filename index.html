@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link rel="icon" type="image/jpeg" href="my project/LARCK_logo.jpeg">
+            <title>LARCK - Sign In</title>
+      <link rel="stylesheet" href="page1.css">
+    </head>
+    <body>
+            <video class="background-video" autoplay muted loop playsinline>
+                <source src="images/background.mp4" type="video/mp4">
+            </video>
+        <div class="video-overlay"></div>
+        <main class="login-container">
+            <div class="logo-section">
+                <img src="larck.png" alt="LARCK Logo" class="logo">
+                <h2> Stay and smile</h2>
+            </div>
+            
+           <div class="login-options">
+
+    <!-- GOOGLE -->
+    <button class="login-btn google-btn" id="googleSignInBtn">
+
+        <svg class="login-icon google-icon"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <path fill="#4285F4"
+                d="M21.35 12.27c0-.71-.06-1.39-.18-2.05H12v3.88h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.69 2.91-4.18 2.91-7.22z"/>
+
+            <path fill="#34A853"
+                d="M12 21.7c2.63 0 4.84-.87 6.45-2.36l-3.14-2.45c-.87.58-1.98.92-3.31.92-2.54 0-4.69-1.72-5.46-4.03H3.29v2.53A9.74 9.74 0 0 0 12 21.7z"/>
+
+            <path fill="#FBBC05"
+                d="M6.54 13.78A5.86 5.86 0 0 1 6.23 12c0-.62.11-1.22.31-1.78V7.69H3.29A9.73 9.73 0 0 0 2.25 12c0 1.57.38 3.05 1.04 4.31l3.25-2.53z"/>
+
+            <path fill="#EA4335"
+                d="M12 6.19c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.83 3.27 14.62 2.3 12 2.3a9.74 9.74 0 0 0-8.71 5.39l3.25 2.53C7.31 7.91 9.46 6.19 12 6.19z"/>
+
+        </svg>
+
+        <span>Sign in with Google</span>
+
+    </button>
+
+
+    <!-- EMAIL -->
+    <button class="login-btn email-btn">
+
+        <svg class="login-icon email-icon"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <path
+                d="M3 5h18v14H3V5zm2 2v.5l7 5 7-5V7l-7 5-7-5z"
+                fill="currentColor"/>
+
+        </svg>
+
+        <span>Sign in with Email</span>
+
+    </button>
+
+
+    <!-- ACCOUNT -->
+    <button class="login-btn account-btn">
+
+        <svg class="login-icon account-icon"
+             viewBox="0 0 24 24"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <circle
+                cx="12"
+                cy="8"
+                r="4"
+                fill="currentColor"/>
+
+            <path
+                d="M4 21c0-4.42 3.58-8 8-8s8 3.58 8 8H4z"
+                fill="currentColor"/>
+
+        </svg>
+
+        <span>Sign in with Account</span>
+
+    </button>
+
+</div>
+            
+
+            <a href="#" class="retrieve-account">
+                Retrieve Account
+            </a>
+
+            <p class="terms">
+                By logging in, you agree to 
+                <a href="#">User Service Terms</a>
+            </p>
+
+<div class="retrieve-popup" id="retrievePopup">
+
+    <div class="retrieve-card">
+
+    
+        <button class="close-retrieve" id="closeRetrieve">
+            ×
+        </button>
+
+    
+        <div class="retrieve-logo">
+            <img src="larck.png" alt="LARCK Logo">
+        </div>
+
+
+        <h2>Retrieve Your Account</h2>
+
+        <p class="retrieve-description">
+            Enter the email address or phone number
+            connected to your LARCK account.
+        </p>
+
+    
+        <form id="retrieveForm">
+
+            <div class="retrieve-input-group">
+
+                <label for="retrieveContact">
+                    Email or Phone Number
+                </label>
+
+                <input
+                    type="text"
+                    id="retrieveContact"
+                    placeholder="Enter your email or phone number"
+                    required
+                >
+
+            </div>
+
+    
+            <button
+                type="submit"
+                class="send-code-btn">
+                Send Verification Code
+            </button>
+
+        </form>
+
+    
+        <button
+            type="button"
+            class="back-to-signin"
+            id="backToSignin">
+            ← Back to Sign In
+        </button>
+
+        
+        <p
+            class="retrieve-message"
+            id="retrieveMessage">
+        </p>
+
+    </div>
+    </div>
+
+      <!-- =========================
+     USER SERVICE TERMS
+========================= -->
+
+<div class="terms-popup" id="termsPopup">
+
+    <div class="terms-card">
+
+        <!-- CLOSE BUTTON -->
+        <button class="close-terms" id="closeTerms">
+            ×
+        </button>
+
+        <!-- LOGO -->
+        <div class="terms-logo">
+            <img src="larck.png" alt="LARCK Logo">
+        </div>
+
+        <h2>User Service Terms</h2>
+
+        <p class="terms-intro">
+            Welcome to LARCK. These User Service Terms
+            explain the basic rules for using LARCK and
+            participating in our audio and social community.
+        </p>
+
+        <!-- TERMS CONTENT -->
+
+        <div class="terms-content">
+
+            <h3>1. Your LARCK Account</h3>
+
+            <p>
+                You are responsible for keeping your LARCK
+                account information secure and for all activity
+                that takes place through your account.
+            </p>
+
+
+            <h3>2. Live Audio Rooms</h3>
+
+            <p>
+                LARCK allows users to create and join live audio
+                rooms, listen to conversations, and participate
+                as speakers when permitted by the room host.
+            </p>
+
+
+            <h3>3. Respectful Behavior</h3>
+
+            <p>
+                Users must treat other members with respect.
+                Harassment, threats, bullying, hateful conduct,
+                or intentionally disruptive behavior is not
+                permitted.
+            </p>
+
+
+            <h3>4. Gifts and LARCK Coins</h3>
+
+            <p>
+                LARCK may provide virtual coins and digital gifts
+                for use within the platform. Virtual items are
+                intended for use within LARCK and do not represent
+                physical cash unless specifically stated by LARCK.
+            </p>
+
+
+            <h3>5. User Content</h3>
+
+            <p>
+                You are responsible for the audio, messages,
+                images, profile information, and other content
+                you share through LARCK. Do not share content
+                that violates applicable laws or the rights of
+                other people.
+            </p>
+
+
+            <h3>6. Privacy</h3>
+
+            <p>
+                We may collect and process information necessary
+                to operate and improve LARCK. Please review the
+                LARCK Privacy Policy for more information about
+                how user information is handled.
+            </p>
+
+
+            <h3>7. Account Restrictions</h3>
+
+            <p>
+                LARCK may restrict, suspend, or terminate an
+                account when necessary to address violations of
+                these terms, misuse of the platform, or security
+                concerns.
+            </p>
+
+
+            <h3>8. Changes to LARCK</h3>
+
+            <p>
+                LARCK may add, remove, or modify features as the
+                platform develops. These changes may include
+                updates to rooms, profiles, coins, gifts,
+                notifications, and other services.
+            </p>
+
+
+            <h3>9. Contact and Support</h3>
+
+            <p>
+                If you experience an account, safety, or technical
+                issue, use the support options provided by LARCK
+                when available.
+            </p>
+
+        </div>
+
+        <!-- ACCEPT BUTTON -->
+
+        <button class="terms-accept" id="termsAccept">
+            I Understand
+        </button>
+
+         </div>
+         </div>
+
+           
+            <div class="google-popup" id="googlePopup">
+
+    <div class="google-card">
+
+        <button class="close-google" id="closeGoogle">
+            ×
+        </button>
+
+        <div class="google-logo-text">
+            <span class="google-blue">G</span>
+            <span class="google-red">o</span>
+            <span class="google-yellow">o</span>
+            <span class="google-blue">g</span>
+            <span class="google-green">l</span>
+            <span class="google-red">e</span>
+        </div>
+
+        <h2>Sign in with Google</h2>
+
+        <p class="google-description">
+            Choose an account to continue to LARCK
+        </p>
+
+        <div class="google-account" id="googleAccount">
+
+            <div class="account-avatar">
+                D
+            </div>
+
+            <div class="account-details">
+                <strong>Damilare</strong>
+                <span>Choose a Google account</span>
+            </div>
+
+            <span class="account-arrow">›</span>
+
+        </div>
+
+        <button class="use-another-account">
+            Use another account
+        </button>
+
+        <p class="google-privacy">
+            Before using this app, you can review LARCK's
+            <a href="#">privacy policy</a> and
+            <a href="#">terms of service</a>.
+        </p>
+
+    </div>
+
+</div>
+
+<div class="email-popup" id="emailPopup">
+
+    <div class="email-card">
+
+        <button class="close-email" id="closeEmail">
+            ×
+        </button>
+
+        <div class="email-logo">
+            <img src="larck.png" alt="LARCK Logo">
+        </div>
+
+        <h2>Sign in with Email</h2>
+
+        <p class="email-description">
+            Enter your email address to continue
+        </p>
+
+        <form id="emailForm">
+
+            <div class="input-group">
+
+                <label for="email">
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="show-password"
+                        id="showPassword">
+                        Show
+                    </button>
+
+                </div>
+
+            </div>
+
+            <a href="#" class="forgot-password">
+                Forgot password?
+            </a>
+
+            <button type="submit" class="email-continue">
+                Continue
+            </button>
+
+        </form>
+
+        <p class="create-account">
+            Don't have a LARCK account?
+            <a href="#" class="open-signup">Create account</a>
+        </p>
+        </div>
+        </div>
+
+        <div class="account-popup" id="accountPopup">
+
+    <div class="account-card">
+
+        <button class="close-account" id="closeAccount">
+            ×
+        </button>
+
+        <div class="account-logo">
+            <img src="larck.png" alt="LARCK Logo">
+        </div>
+
+        <h2>Sign in with Account</h2>
+
+        <p class="account-description">
+            Enter your LARCK account details
+        </p>
+
+        <form id="accountForm">
+
+            <div class="account-input-group">
+
+                <label for="accountUsername">
+                    Username / Account ID
+                </label>
+
+                <input
+                    type="text"
+                    id="accountUsername"
+                    placeholder="Enter your username"
+                    required
+                >
+
+            </div>
+
+            <div class="account-input-group">
+
+                <label for="accountPassword">
+                    Password
+                </label>
+
+                <div class="account-password-wrapper">
+
+                    <input
+                        type="password"
+                        id="accountPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="account-show-password"
+                        id="accountShowPassword">
+                        Show
+                    </button>
+
+                </div>
+
+            </div>
+
+            <a href="#" class="account-forgot-password">
+                Forgot password?
+            </a>
+
+            <button type="submit" class="account-signin">
+                Sign In
+            </button>
+
+        </form>
+
+        <p class="account-create">
+            Don't have a LARCK account?
+            <a href="#" class="open-signup">Create account</a>
+        </p>
+       </div>
+    </div>
+
+    <!-- =========================
+     CREATE ACCOUNT POPUP
+========================= -->
+
+<div class="signup-popup" id="signupPopup">
+
+    <div class="signup-card">
+
+        <button class="close-signup" id="closeSignup">
+            ×
+        </button>
+
+        <div class="signup-logo">
+            <img src="larck.png" alt="LARCK Logo">
+        </div>
+
+        <h2>Create LARCK Account</h2>
+
+        <p class="signup-description">
+            Create your account and start your LARCK journey.
+        </p>
+
+        <form id="signupForm">
+
+            <!-- USERNAME -->
+            <div class="signup-input-group">
+
+                <label for="signupUsername">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="signupUsername"
+                    placeholder="Choose a username"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+            <div class="signup-input-group">
+
+                <label for="signupEmail">
+                    Email address
+                </label>
+
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+            <div class="signup-input-group">
+
+                <label for="signupPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create a password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- COUNTRY -->
+            <div class="signup-input-group">
+
+                <label for="signupCountry">
+                    Country
+                </label>
+
+                <select id="signupCountry" required>
+
+                    <option value="" selected disabled>
+                        Select your country
+                    </option>
+
+                    <option value="Nigeria">
+                        🇳🇬 Nigeria
+                    </option>
+
+                    <option value="Ghana">
+                        🇬🇭 Ghana
+                    </option>
+
+                    <option value="Kenya">
+                        🇰🇪 Kenya
+                    </option>
+
+                    <option value="South Africa">
+                        🇿🇦 South Africa
+                    </option>
+
+                    <option value="Ethiopia">
+                        🇪🇹 Ethiopia
+                    </option>
+
+                    <option value="Philippines">
+                        🇵🇭 Philippines
+                    </option>
+
+                    <option value="United Kingdom">
+                        🇬🇧 United Kingdom
+                    </option>
+
+                    <option value="United States">
+                        🇺🇸 United States
+                    </option>
+
+                    <option value="Canada">
+                        🇨🇦 Canada
+                    </option>
+
+                    <option value="India">
+                        🇮🇳 India
+                    </option>
+
+                    <option value="United Arab Emirates">
+                        🇦🇪 United Arab Emirates
+                    </option>
+
+                    <option value="Germany">
+                        🇩🇪 Germany
+                    </option>
+
+                    <option value="France">
+                        🇫🇷 France
+                    </option>
+
+                    <option value="Italy">
+                        🇮🇹 Italy
+                    </option>
+
+                    <option value="Spain">
+                        🇪🇸 Spain
+                    </option>
+
+                    <option value="Australia">
+                        🇦🇺 Australia
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CREATE ACCOUNT -->
+            <button
+                type="submit"
+                class="signup-continue">
+                Create Account
+            </button>
+
+        </form>
+
+
+        <p
+            class="signup-message"
+            id="signupMessage">
+        </p>
+
+    </div>
+
+</div>
+
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="page1.js"></script>
+    </body>
+</html>
